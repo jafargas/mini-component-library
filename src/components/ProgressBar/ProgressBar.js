@@ -55,6 +55,8 @@ const Wrapper = styled.progress`
 
   &::-moz-progress-bar {
     background-color: ${COLORS.primary};
+    border-radius: var(--pbBorderRadius);
+    overflow: clip;
   }
 `;
 
