@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public",
-    "start": "npm run dev"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public"
   },
   "eslintConfig": {
     "extends": [
