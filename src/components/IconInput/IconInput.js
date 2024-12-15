@@ -8,16 +8,16 @@ import VisuallyHidden from "../VisuallyHidden";
 
 const SIZES = {
   large: {
-    "--height": "36px",
-    "--fontSize": "18px",
+    "--height": "2.25rem",
+    "--fontSize": "1.125rem",
     "--padding": "8px 8px 8px 36px",
-    "--iconTop": "4px",
+    "--iconSize": "24px",
   },
   small: {
-    "--height": "24px",
-    "--fontSize": "14px",
+    "--height": "1.5rem",
+    "--fontSize": "0.875rem",
     "--padding": "4px 4px 4px 24px",
-    "--iconTop": "2px",
+    "--iconSize": "16px",
   },
 };
 
@@ -66,8 +66,13 @@ const StyledInput = styled.input`
 const StyledIcon = styled(Icon)`
   position: absolute;
   left: 0;
-  top: var(--iconTop);
+  top: 0;
+  bottom: 0;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  margin: auto;
   color: currentColor;
+  pointer-events: none;
 `;
 
 export default IconInput;

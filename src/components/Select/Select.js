@@ -13,6 +13,8 @@ import VisuallyHidden from "../VisuallyHidden";
 const Select = ({ label, value, onChange, children }) => {
   const selectRef = React.useRef();
 
+  // Leaving it as it, but not elegant at all. Learned later that I could have just made the
+  // native element fully transparent and have saved a lot of effort.
   const font = getCanvasFont(selectRef.current);
   const displayedValue = getDisplayedValue(value, children);
   const displayedValueWidth = Math.ceil(getTextWidth(displayedValue, font));
@@ -33,7 +35,12 @@ const Select = ({ label, value, onChange, children }) => {
       >
         {children}
       </SelectInput>
-      <Chevron id="chevron-down" size={22} strokeWidth={2} />
+      <Chevron
+        id="chevron-down"
+        size={22}
+        strokeWidth={2}
+        style={{ "--chevronSize": "22px" }}
+      />
     </Wrapper>
   );
 };
@@ -68,7 +75,11 @@ const SelectInput = styled.select`
 const Chevron = styled(Icon)`
   position: absolute;
   right: 16px;
-  top: 11px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: var(--chevronSize);
+  height: var(--chevronSize);
   pointer-events: none;
 `;
 
